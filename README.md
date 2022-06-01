@@ -17,6 +17,18 @@
 
 - `fireworks_tutorial_fakevasp.ipynb`: Same tutorial but using RunFakeVasp (FireTask) instead of VASP code.
 
+## Guide for webgui
+[laikapack side]
+1. launch a notebook with an image kubeflow_vasp:atomate_stack (atomate, mongodb, pymatgen)
+2. set config file (copy the whole atomate directory at home directory): cp -r atomate/ ../
+3. make mongod run in the background: mongod --quiet>/dev/null & python /home/jovyan/atomate/config/db_reset.py
+4. launch a web gui: lpad webgui --port 27020 
+
+[local side]
+1. create fw_webgui.yml file (refer to the reply for the information which should be written in the file)
+2. create a service: kubectl create -f fw_webgui.yml (can confirm whether it's launched with kubectl get services )
+3. port-forwarding: kubectl port-forward fireworks-tutorial-0 8000:27020
+
 ## Citation
 
 There is no citation! Feel free to fork (:fork_and_knife:) and leave a start (:star:)
