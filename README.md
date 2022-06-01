@@ -27,7 +27,7 @@
 [local side]
 1. create fw_webgui.yml file (refer to the reply for the information which should be written in the file)
 2. create a service: kubectl create -f fw_webgui.yml (can confirm whether it's launched with kubectl get services )
-3. port-forwarding: kubectl port-forward <notebook name> 8000:27020
+3. port-forwarding: kubectl port-forward (notebook name) 8000:27020
 
 ## Citation
 
